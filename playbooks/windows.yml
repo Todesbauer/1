@@ -1,0 +1,9 @@
+---
+- name: test windows whoami
+  hosts: win
+  strategy: free
+  tasks:
+   - name: windows whoami command
+     win_command: whoami
+     register: whoami
+   - debug: var=whoami
