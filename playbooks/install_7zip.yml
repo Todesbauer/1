@@ -5,7 +5,7 @@
   strategy: free
   tasks:
     - name: Install application and override expected return codes
-      ansible.windows.win_package:
+      win_package:
         path: https://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe
         product_id: '{7DEBE4EB-6B40-3766-BB35-5CBBC385DA37}'
         arguments: '/q /norestart'
