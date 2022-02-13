@@ -4,9 +4,10 @@
   hosts: win
   strategy: free
   tasks:
-    - name: Install 7zip and use a file version for the installation check
+    - name: Install application and override expected return codes
       ansible.windows.win_package:
-        path: C:\temp\7z.exe
-        creates_path: C:\Program Files\7-Zip\7z.exe
-        creates_version: 16.04
-        state: present
+      path: https://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe
+      product_id: '{7DEBE4EB-6B40-3766-BB35-5CBBC385DA37}'
+      arguments: '/q /norestart'
+      state: present
+      expected_return_code: [0, 666, 3010]
