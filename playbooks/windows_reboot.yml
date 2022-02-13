@@ -1,6 +1,5 @@
 ---
 - name: win_reboot module demo
-  collections: ansible.windows
   hosts: win
   become: false
   gather_facts: false
