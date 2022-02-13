@@ -1,13 +1,10 @@
 ---
-#installs 7zip
-- name: Install 7zip on windows hosts
+#installs vlc
+- name: Install vlc on windows hosts
   hosts: win
   strategy: free
   tasks:
     - name: Install application and override expected return codes
       win_package:
-        path: https://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe
-        product_id: '{7DEBE4EB-6B40-3766-BB35-5CBBC385DA37}'
-        arguments: '/q /norestart'
+        path: https://ftp.fau.de/videolan/vlc/3.0.16/win32/vlc-3.0.16-win32.exe
         state: present
-        expected_return_code: [0, 666, 3010]
