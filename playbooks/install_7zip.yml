@@ -4,7 +4,15 @@
   hosts: win
   strategy: free
   tasks:
-    - name: Install application and override expected return codes
-      win_package:
-        path: https://ftp.fau.de/videolan/vlc/3.0.16/win32/vlc-3.0.16-win32.exe
-        state: present
+  - name: Install 7zip
+    win_package:
+      path: https://www.7-zip.org/a/7z1900-x64.msi
+      creates_version: 19.00
+      creates_path: 'C:\Program Files\7-Zip\7z.exe'
+      state: present
+#      become: yes
+#      become_method: runas
+#      become_flags: logon_type=new_credentials logon_flags=net_credentials_only
+#      vars:
+#          ansible_become_user: DOMAIN\admin
+#          ansible_become_pass: mostsecurepassword
