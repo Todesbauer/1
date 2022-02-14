@@ -1,9 +1,9 @@
 ---
 - name: Backup current config
-  hosts: 192.168.0.99
   tasks:
     - name: backup
       fortios_config:
+        host: 102.168.0.99
         username: admin
         password: Start-123
         backup: yes
