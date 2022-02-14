@@ -1,9 +1,9 @@
 ---
 - name: Backup current config
   hosts: fortigate
+  gather_facts: no
   tasks:
     - name: backup
-      gathering_facts: no
       fortios_config:
         backup: yes
         backup_path: /etc/ansible/
