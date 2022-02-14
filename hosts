@@ -34,7 +34,9 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group:
 
+[fortigate]
 
+192.168.1.99
 
 [win]
 
