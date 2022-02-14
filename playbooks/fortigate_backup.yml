@@ -1,8 +1,8 @@
 ---
 - name: Backup current config
+  hosts: fortigate
   fortios_config:
-    host: 192.168.1.99
     username: admin
     password: Start-123
     backup: yes
-    backup_path: \\192.168.0.128\temp
+    backup_path: /etc/ansible/
