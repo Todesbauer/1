@@ -36,7 +36,12 @@
 
 [fortigate]
 
-192.168.1.99
+192.168.0.99
+
+[fortigate:vars]
+
+ansible_connection=local
+ansible_network_os=fortios
 
 [win]
 
