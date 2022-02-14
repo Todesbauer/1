@@ -1,6 +1,6 @@
 ---
 - name: Backup current config
-  hosts: fortigate
+  host: 192.168.0.99
   tasks:
     - name: backup
       fortios_config:
