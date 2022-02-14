@@ -2,7 +2,6 @@
 - name: Backup current config
   hosts: fortigate
   connection: httpapi
-  ansible_network_os: fortios
   gather_facts: no
   tasks:
     - name: backup
