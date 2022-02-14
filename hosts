@@ -34,15 +34,15 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group:
 
-##fortigate
-
+[fortigate]
 192.168.0.99
 
 [fortigate:vars]
 
 ansible_connection=local
 ansible_network_os=fortios
-
+ansible_user=admin
+ansible_password=Start-123
 [win]
 
 
