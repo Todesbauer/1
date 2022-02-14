@@ -1,6 +1,7 @@
 ---
 - name: Backup current config
   hosts: fortigate
+  gathering_facts: no
   tasks:
     - name: backup
       fortios_config:
