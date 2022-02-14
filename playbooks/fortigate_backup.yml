@@ -1,5 +1,6 @@
 ---
 - name: Backup current config
+  collecion: fortinet.fortios.fortios_system_config_backup_restore
   hosts: fortigate
   connection: httpapi
   gather_facts: no
