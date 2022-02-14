@@ -7,4 +7,3 @@
     - name: backup
       fortios_config:
         backup: yes
-        backup_path: /etc/ansible/
