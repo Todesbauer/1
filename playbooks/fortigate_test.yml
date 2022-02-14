@@ -1,0 +1,23 @@
+---
+- hosts: fortigate
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  vars:
+    vdom: "admin"
+    host: "192.168.0.99"
+    username: "admin"
+    password: "Start-123"
+  tasks:
+  - name: backup global or a_specific_vdom settings
+    fortios_system_config_backup_restore:
+     config: "system config backup"
+     host:  "{{ host }}"
+     username: "{{ username }}"
+     password: "{{ password }}"
+     vdom: "{{ vdom }}"
+     backup: "yes"
+     https: True
+     ssl_verify: False
+     scope: "global or vdom"
+     filename: "/tmp/backup_test"
