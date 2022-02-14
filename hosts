@@ -39,7 +39,7 @@
 [fortigate:vars]
 ansible_user=admin
 ansible_password=Start-123
-ansible_network_os=fortios
+ansible_network_os=fortinet.fortios.fortios
 [win]
 
 
