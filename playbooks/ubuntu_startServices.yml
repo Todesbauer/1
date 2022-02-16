@@ -8,6 +8,6 @@
         state: started
         enabled: yes
       with_item:
-        - nginx
-        - php-cli
-        - mysql-server
+        - "nginx"
+        - "php-cli"
+        - "mysql-server"
