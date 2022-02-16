@@ -1,11 +1,11 @@
 ---
-hosts: ubuntu_test
-become: true:
-tasks:
-  - name: Start Services
-    service:
-      name:
-        - nxginx
-        - php-cli
-        - mysql-server
-      state: started
+- hosts: ubuntu_test
+  become: true:
+  tasks:
+    - name: Start Services
+      service:
+        name:
+          - nxginx
+          - php-cli
+          - mysql-server
+        state: started
