@@ -3,4 +3,4 @@
   become: true
   tasks:
     - name: Install required packages
-      apt: name=['php5-cli', 'nginx', 'mysql-server-5.6'] state=present update_cache=yes
+      apt: name=nginx state=present update_cache=yes
