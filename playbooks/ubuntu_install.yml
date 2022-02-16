@@ -2,11 +2,8 @@
 - hosts: ubuntu_test
   become: true
   tasks:
-    - name: Install required packages
+    - name: start php service
       apt: 
-        name:  
-          - php-cli
-          - nginx
-          - mysql-server
+        name: php-cli
         state: present
         update_cache: yes
