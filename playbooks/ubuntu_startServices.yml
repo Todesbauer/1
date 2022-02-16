@@ -4,8 +4,10 @@
   tasks:
     - name: Start Services
       service:
-        name:
-          - nginx
-          - php-cli
-          - mysql-server
+        name: {{ item }}
         state: started
+        enabled: yes
+      with_item:
+        nginx
+        php-cli
+        mysql-server
