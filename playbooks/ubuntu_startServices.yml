@@ -5,7 +5,7 @@
     - name: Start Services
       service:
         name:
-          - nxginx
+          - nginx
           - php-cli
           - mysql-server
         state: started
