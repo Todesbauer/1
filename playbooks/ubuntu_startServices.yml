@@ -9,5 +9,4 @@
         enabled: yes
       with_items:
         - nginx
-        - php-cli
-        - mysql-server
+        - mysql
