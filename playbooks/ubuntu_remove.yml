@@ -8,5 +8,5 @@
           - php-cli
           - nginx
           - mysql-server
-        state: present
+        state: absent
         update_cache: yes
