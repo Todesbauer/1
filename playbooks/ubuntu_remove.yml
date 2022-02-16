@@ -1,0 +1,12 @@
+---
+- hosts: ubuntu_test
+  become: true
+  tasks:
+    - name: Install required packages
+      apt: 
+        name:  
+          - php-cli
+          - nginx
+          - mysql-server
+        state: present
+        update_cache: yes
