@@ -1,7 +1,10 @@
 ---
 - hosts: ubuntu_test
-  become: yes
+  become: true
   tasks:
     - name: Install required packages
-      become: yes
-      apt: name=nginx
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+        - php5-cli
+        - nginx
+        - mysql-server-5.6
