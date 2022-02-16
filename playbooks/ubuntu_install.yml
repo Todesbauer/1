@@ -4,4 +4,4 @@
   tasks:
     - name: Install required packages
       become: yes
-      apt: name=nginx state=present update_cache=yes
+      apt: name=nginx state=present
