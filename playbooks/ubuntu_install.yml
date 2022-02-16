@@ -8,5 +8,5 @@
           - php5-cli
           - nginx
           - mysql-server-5.6
-      state: present
-      update_cache: yes
+        state: present
+        update_cache: yes
