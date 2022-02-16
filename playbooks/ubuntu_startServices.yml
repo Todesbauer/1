@@ -1,6 +1,6 @@
 ---
 - hosts: ubuntu_test
-  become: true:
+  become: yes
   tasks:
     - name: Start Services
       service:
