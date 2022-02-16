@@ -3,5 +3,4 @@
   become: yes
   tasks:
     - name: Install required packages
-      become: yes
-      apt: name=nginx state=present
+      apt: name=nginx
