@@ -1,8 +1,6 @@
 ---
 - name: rename multiple hosts and reboot if required
   hosts: win
-  vars_files:
-   /home/awx/vars/host.yml
   tasks:
   - name: Change the hostname to sample-hostname
     ansible.windows.win_hostname:
