@@ -1,19 +1,16 @@
 ---
 - name: rename multiple hosts and reboot if required
-  hosts: win[0:1]
+  hosts: win
+  vars_files:
+   1/playbooks/vars/host.yml
   tasks:
   - name: Change the hostname to sample-hostname
-    hosts: win[0]
     ansible.windows.win_hostname:
-      name: windows1
+      name: "{{item.name}}"
+      when: "{{ansible_hostname == item.host}}"
+      with_items: "{{hostinfo}}"
     register: res
     
-  - name: Change the hostname to sample-hostname 2
-    hosts: win[1]
-    ansible.windows.win_hostname:
-      name: windows2
-    register: res
-
   - name: Reboot
     ansible.windows.win_reboot:
     when: res.reboot_required
