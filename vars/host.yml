@@ -1,0 +1,6 @@
+---
+hostinfo:
+- host: 192.168.0.98
+  name: windows1
+- host: 192.168.0.128
+  name: windows2
