@@ -1,6 +1,6 @@
 ---
-#installs vlc
-- name: Install vlc on windows hosts
+#installs 7zip
+- name: Install 7zip and vlc on windows hosts
   hosts: win
   strategy: free
   tasks:
@@ -10,6 +10,12 @@
       creates_version: 19.00
       creates_path: 'C:\Program Files\7-Zip\7z.exe'
       state: present
+  - name: Install vlc
+    win_package:
+      path: https://get.videolan.org/vlc/3.0.16/win64/vlc-3.0.16-win64.exe
+      creates_version: 3.0.16
+      creates_path: 'C:\Program Files\vlc\vlc.exe'
+      state: present      
 #      become: yes
 #      become_method: runas
 #      become_flags: logon_type=new_credentials logon_flags=net_credentials_only
