@@ -3,13 +3,13 @@
   hosts: win
   tasks:
   - name: Change the hostname to sample-hostname
-    host: 192.168.0.98:
+    host: 192.168.0.98
     ansible.windows.win_hostname:
       name: windows1
     register: res
     
   - name: Change the hostname to sample-hostname
-    host: 192.168.0.128:
+    host: 192.168.0.128
     ansible.windows.win_hostname:
       name: windows2
     register: res
