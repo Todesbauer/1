@@ -4,8 +4,11 @@
   tasks:
   - name: Change the hostname to sample-hostname
     ansible.windows.win_hostname:
-      name: windows
+      name: "{{ item }}"
     register: res
+    loop:
+      - windows1
+      - windows2
 
   - name: Reboot
     ansible.windows.win_reboot:
