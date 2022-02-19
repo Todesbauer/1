@@ -1,6 +1,7 @@
 ---
 - name: rename multiple hosts and reboot if required
   hosts: win
+  vars: extra_vars
   tasks:
   - name: Change the hostname to sample-hostname
     ansible.windows.win_hostname:
