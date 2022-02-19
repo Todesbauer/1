@@ -1,6 +1,6 @@
 ---
 - name: rename multiple hosts and reboot if required
-  hosts:win[0:1]
+  hosts: win[0:1]
   tasks:
   - name: Change the hostname to sample-hostname
     hosts: win[0]
