@@ -12,7 +12,7 @@
       state: present
   - name: Install vlc
     win_package:
-      path: https://get.videolan.org/vlc/3.0.16/win64/vlc-3.0.16-win64.exe
+      path: https://vlc.pixelx.de/vlc/3.0.16/win64/vlc-3.0.16-win64.msi
       creates_version: 3.0.16
       creates_path: 'C:\Program Files\vlc\vlc.exe'
       state: present      
