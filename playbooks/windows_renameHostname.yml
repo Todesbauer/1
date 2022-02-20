@@ -3,16 +3,16 @@
   hosts: win
   vars: 
     hostinfo:
-       - host: 192.168.0.98
-         name: windows1
-       - host: 192.168.0.128
-         name: windows2   
+        - host: 192.168.0.98
+          name: windows1
+        - host: 192.168.0.128
+          name: windows2   
   tasks:
   - name: Change the hostname to sample-hostname
     ansible.windows.win_hostname:
-      name: "{{item.name}}"
-      when: "{{ansible_hostname == item.host}}"
-      with_items: "{{hostinfo}}"
+      name: "{{ item.name }}"
+      when: "{{ ansible_hostname == item.host }}"
+      with_items: "{{ hostinfo }}"
     register: res
     
   - name: Reboot
