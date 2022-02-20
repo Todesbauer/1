@@ -10,8 +10,8 @@
   tasks:
   - name: Change the hostname to sample-hostname
     ansible.windows.win_hostname:
-      name: "{{ item.name }}"
-      when: "{{ ansible_hostname == item.host }}"
+      name: "{{ hostname.name }}"
+      when: "{{ ansible_hostname == hostname.host }}"
       with_items: "{{ hostinfo }}"
     register: res
     
