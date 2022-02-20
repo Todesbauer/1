@@ -6,7 +6,7 @@
     ansible.windows.win_hostname:
       name: "{{ item.name }}"
       when: "{{ ansible_hostname == item.host }}"
-      with-items:
+      with_items:
         hostinfo:
         - host: 192.168.0.98
           name: windows1
