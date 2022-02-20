@@ -1,21 +1,39 @@
 ---
+
 - name: rename multiple hosts and reboot if required
+
   hosts: win
+
   vars:
+
     hostinfo:
-      host: 192.168.0.98
-        name: windows1
-      host: 192.168.0.128
-        name: windows2   
+
+    - host: 192.168.0.98
+
+      name: windows1123123
+
+    - host: 192.168.0.128
+
+      name: windows2232
+
   tasks:
+
   - name: Change the hostname to sample-hostname
+
     ansible.windows.win_hostname:
-      name: "{{ item.host.name }}"
-      when: "{{ ansible_hostname == item.host }}"
-      with_items: "{{ hostname }}"
-        
-    register: res
-    
-  - name: Reboot
-    ansible.windows.win_reboot:
-    when: res.reboot_required
+
+      name: "{{ item.name }}"
+
+    when: ansible_host  == item.host
+
+    with_items: "{{ hostinfo }}"
+
+    register: restart
+
+
+
+  - debug:
+
+      var: restart
+
+
