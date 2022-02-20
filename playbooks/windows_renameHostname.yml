@@ -13,6 +13,7 @@
       name: "{{ item.name }}"
       when: "{{ ansible_hostname == item.host }}"
       with_items: "{{ hostinfo }}"
+      loop: "{{ hostinfo }}"
     register: res
     
   - name: Reboot
