@@ -1,4 +1,5 @@
 ---
 collections:
 - name: ansible.windows
+- name: fortinet.fortios
 - name: community.general
