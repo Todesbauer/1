@@ -1,7 +1,6 @@
 ---
 - name: Benenne mehrere Hosts um und starte neu, falls erforderlich
   hosts: win
-  gather_facts: false
   vars:
     hostinfo:
       host1:
@@ -11,7 +10,7 @@
         name: SAC2
         ip: 192.168.0.128
 
-tasks:
+  tasks:
   - name: Ändere den Computernamen entsprechend der Liste
     ansible.windows.win_hostname:
       name: "{{ item.value.name }}"
@@ -26,7 +25,7 @@ tasks:
       msg: "{{ res | json_query('results[*].reboot_required') is any }}"
     # gibt den Wert für 'reboot required' des entsprechendes Hosts auf der Konsole aus ('true' oder 'false')
 
-  - name: Neustart, falls der Name geändert wurde
-    ansible.windows.win_reboot:
-    when: res | json_query('results[*].reboot_required') is any == true
-    # Schleife durch das Register prüft, ob Variable 'reboot_required' den Wert 'true' hat0
+ - name: Neustart, falls der Name geändert wurde
+   ansible.windows.win_reboot:
+   when: res | json_query('results[*].reboot_required') is any == true
+   # Schleife durch das Register prüft, ob Variable 'reboot_required' den Wert 'true' hat0
