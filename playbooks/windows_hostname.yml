@@ -20,12 +20,12 @@
     register: res
     # hinterlegt "reboot_required" im Register
 
-- name: say debug
+  - name: say debug
     debug:
     msg: "{{ res | json_query('results[*].reboot_required') is any }}"
     # gibt den Wert für 'reboot required' des entsprechendes Hosts auf der Konsole aus ('true' oder 'false')
 
- - name: Neustart, falls der Name geändert wurde
-   ansible.windows.win_reboot:
-   when: res | json_query('results[*].reboot_required') is any == true
-   # Schleife durch das Register prüft, ob Variable 'reboot_required' den Wert 'true' hat0
+  - name: Neustart, falls der Name geändert wurde
+    ansible.windows.win_reboot:
+    when: res | json_query('results[*].reboot_required') is any == true
+    # Schleife durch das Register prüft, ob Variable 'reboot_required' den Wert 'true' hat0
