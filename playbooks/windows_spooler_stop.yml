@@ -1,6 +1,7 @@
 ---
-- hosts: win
-- tasks:
+- name: Druckewarteschlange stoppen
+  hosts: win
+  tasks:
   - name: stoppt den Dienste "Druckerwarteschlange"
     ansible.windows.win_service:
       name: spooler
