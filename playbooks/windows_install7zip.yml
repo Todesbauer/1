@@ -1,0 +1,8 @@
+---
+- name: Install 7zip on Windows
+  hosts: win
+  tasks:
+  - name: Install 7zip with chocolatey
+    win_chocolatey:
+      name: 7zip
+      state: present
