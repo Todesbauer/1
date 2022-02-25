@@ -1,0 +1,14 @@
+---
+- name: Hostname der FortiGate ändern
+  hosts: fortigates
+  connection: httpapi
+  collections:
+  - fortinet.fortios
+  vars:
+   ansible_httpapi_use_ssl: yes
+   ansible_httpapi_validate_certs: no
+   ansible_httpapi_port: 443
+  tasks:
+   - name: Configure global attributes.
+     fortios_system_global:
+       hostname: 'CustomHostName'
