@@ -1,0 +1,9 @@
+---
+- name: Config von Aruba_switch zurücksichern
+  hosts: aruba
+  collections:
+  - arubanetworks.aos_switch
+  tasks:
+  - name: Backup config
+    arubaoss_config_bkup:
+      file_name: test
