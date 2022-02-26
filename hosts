@@ -34,6 +34,19 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group:
 
+      ansible_host: 10.6.6.18
+      ansible_user: admin
+      ansible_password: admin
+      ansible_connection: local  # Do not change
+      ansible_network_os: arubaoss  # Do not change
+      
+[aruba]
+ansible_host: 192.168.0.2
+ansible_user: manager
+ansible_password: Start-123
+ansible_connection: local  # Do not change
+ansible_network_os: arubaoss  # Do not change
+      
 [fortigate]
 192.168.0.99
 [fortigate:vars]
