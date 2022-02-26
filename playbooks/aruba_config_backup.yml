@@ -4,6 +4,9 @@
   collections:
   - arubanetworks.aos_switch
   tasks:
+  - name: debug
+    debug:
+    {{ results }}
   - name: Backup config
     arubaoss_config_bkup:
       file_name: test
