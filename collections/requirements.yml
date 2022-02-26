@@ -3,3 +3,4 @@ collections:
 - name: ansible.windows
 - name: fortinet.fortios
 - name: community.general
+- name: arubanetworks.aos_switch
