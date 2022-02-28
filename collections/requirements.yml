@@ -5,3 +5,4 @@ collections:
 - name: community.general
 - name: arubanetworks.aos_switch
 - name: ansible.netcommon
+- name: community.network
