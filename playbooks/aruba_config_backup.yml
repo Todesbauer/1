@@ -9,5 +9,5 @@
     arubaoss_config:
       backup: yes
       backup_options:
-        filename:  aruba_config_"{{ date }}".cfg
+        filename: aruba_config_"{{ date }}".cfg
         dir_path: /home/ftpuser/ftp/files
