@@ -10,4 +10,4 @@
       backup: yes
       backup_options:
         filename: aruba_config_"{{ date }}".cfg
-        dir_path: /tmp
+        dir_path: $Home
