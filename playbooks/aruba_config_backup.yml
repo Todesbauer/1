@@ -1,12 +1,13 @@
 ---
-- name: Config von Aruba_switch zurücksichern
-  hosts: aruba
+- hosts: aruba
   collections:
   - arubanetworks.aos_switch
+  vars:
+    date: "{{ lookup('pipe', 'date +%Y_%m_%d-%H_%M') }}"
   tasks:
-  - name: debug
-    debug:
-    {{ results }}
-  - name: Backup config
-    arubaoss_config_bkup:
-      file_name: test
+  - name: backup up running-config
+    arubaoss_config:
+      backup: yes
+      backup_options:
+        filename:  aruba_config_"{{ date }}".cfg
+        dir_path: /home/ftpuser/ftp/files
