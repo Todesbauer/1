@@ -9,4 +9,5 @@
     arubaoss_config:
       backup: yes
       backup_options:
+        dir_path:
         filename: aruba_config_"{{ date }}".cfg
