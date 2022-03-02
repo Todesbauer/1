@@ -45,7 +45,7 @@
 ansible_user=manager
 ansible_password=Start-123
 ansible_connection=network_cli  # Do not change
-ansible_network_os=arubaoss  # Do not change
+ansible_network_os=arubanetworks.aos_switch.arubaoss # Do not change
       
 [fortigate]
 
