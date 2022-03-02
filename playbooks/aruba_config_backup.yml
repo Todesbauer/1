@@ -2,6 +2,7 @@
 - hosts: aruba
   collections:
   - arubanetworks.aos_switch
+  gather_facts: false
   vars:
     date: "{{ lookup('pipe', 'date +%Y_%m_%d-%H_%M') }}"
   tasks:
