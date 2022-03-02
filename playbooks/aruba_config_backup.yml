@@ -10,5 +10,5 @@
     arubaoss_config:
       backup: yes
       backup_options:
-        dir_path: /
+        dir_path: /var/lib/awx/projects
         filename: aruba_config_"{{ date }}".cfg
